@@ -1,0 +1,112 @@
+%
+% Capítulo 2
+%
+\chapter{Formulação do Problema} \label{cap2}
+
+Estamos no início do novo capítulo. Aqui podemos colocar algum texto introdutório e 
+de resumo do conteúdo do capítulo. Por exemplo, a secção~\ref{sec21} trata aspectos
+referentes às citações de bibliografia. Na secção~\ref{sec22} apresenta-se um exemplo 
+de enumeração de conteúdos. O uso de tabelas é exemplificado na secção~\ref{sec23}.
+Nas secções~\ref{sec24} e~\ref{sec25} abordam-se expressões matemáticas e o uso de
+figuras de grandes dimensões.
+
+
+%
+% 2.1 - Nome da secção
+%
+\section{Nome da secção} \label{sec21}
+Agora o texto da secção. Em \cite{wiki:bigdata2015} encontra várias referências para o assunto. Segue-se a explicação das referências \cite{Boytsov:2011:IMA:1963190.1963191} e \cite{Jurkiewicz:2015:MVA:2627368.2656337}. Exemplos de livros da área são \cite{Neumann:1958:CB:578873} e \cite{Kernighan:1982:EPS:578130}.
+
+Este segundo parágrafo é a continuação da secção.
+
+
+%
+% 2.2 - Análise do problema
+%
+\section{Análise do problema - enumeração} \label{sec22}
+Nesta análise vamos considerar uma versão simplificada do problema de apresentação de listas 
+de enumeração. A unidade curricular Projecto e Seminário do curso de licenciatura em Engenharia Informática e de
+Computadores proporciona a oportunidade para demonstrar independência e originalidade, para planear e
+organizar um projecto durante um período de tempo limitado, e para pôr em prática técnicas ensinadas ao
+longo do curso. O seminário, em articulação com o projecto, destina-se à introdução de temas relevantes para
+os estudantes.
+
+Projecto e Seminário tem duração semestral, envolvendo, em média, três dias de trabalho semanais do
+estudante, ao longo de 20 semanas, a que correspondem 18 créditos ECTS (480 horas de trabalho do
+estudante). No final, o estudante:
+\begin{itemize}
+	\item [1.] Planeou, executou e completou um projecto e, de forma apropriada, implementou-o no período de
+tempo previsto;
+  \item [2.] Utilizou o orientador, apropriadamente, como consultor do projecto ou como cliente.
+  \item [3.] Fez duas comunicações (das quais uma no âmbito do projecto) e arguiu uma.
+  \item [4.] Demonstrou competência prática e os resultados do projecto.
+  \item [5.] Documentou o projecto, designadamente no relatório final.
+\end{itemize}
+
+%
+% 2.3 - Outro problema - tabela
+%
+\section{Outro problema - tabela} \label{sec23}
+Em muitas situações, é necessário e conveniente apresentar os resultados na
+forma de tabela. Assim, a tabela~\ref{tab1} apresenta os prazos de entrega de Projecto
+e Seminário, para o semestre de Verão 2014/2015.
+
+\begin{table} [h!]
+\centering
+\caption{Um exemplo de legenda de tabela. Prazos de entrega de Projecto
+e Seminário, para o semestre de Verão 2014/2015.} \vspace{2mm}
+\label{tab1}       % Dar um nome de etiqueta único.
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Data} & \textbf{Actividade} & \textbf{Observações}  \\ \hline
+23 de Março de 2015 & Proposta do projecto & Quatro páginas \\ \hline
+4 de Maio de 2015 & Relatório de progresso & Preparar bem\\ \hline
+									& Apresentação individual & Escolher tema \\ \hline
+15 de Junho de 2015 & Cartaz e versão beta & \\ \hline
+25 de Julho de 2015 & Versão final (época normal) & \\ \hline
+19 de Setembro de 2015 & Versão final (época especial) & É necessária inscrição\\ \hline
+\end{tabular}
+\end{table}
+
+
+%
+% 2.4 - Expressões matemáticas
+%
+\section{Expressões matemáticas} \label{sec24}
+As expressões matemáticas tais como $a= b + c = d/e$ são necessárias em muitas situações.
+Podemos ter expressões não numeradas, tal como na linha anterior, ou ainda desta forma
+\begin{displaymath} 
+h = \sqrt{a^2 + b^2},
+\end{displaymath}
+e podemos ter expressões numeradas tais como
+\begin{equation} \label{eq1}
+E = m c^2,
+\end{equation}
+as quais são elementos do texto e podem ser referidas pela sua etiqueta (número) 
+da seguinte forma através de~(\ref{eq1}), à semelhança do que acontece para 
+figuras e tabelas.\\
+
+As expressões podem envolver funções conhecidas, tais como
+\begin{equation} \label{eq2}
+\displaystyle s(t)=\sum_{i=1}^{N} a_i x_i(t) =a_1 x_1(t) +  a_2 x_2(t) + \ldots + a_N x_N(t) \qquad \mbox{e} \qquad \displaystyle p(t)=\sum_{i=1}^{N} \log_2(a_i) x_i(t).
+\end{equation}
+
+
+%
+% 2.5 - Figuras de grande dimensão
+%
+\section{Figuras de grande dimensão} \label{sec25}
+Por vezes, em casos excepcionais devido à sua dimensão, as figuras têm 
+que ser apresentadas de forma a ocupar toda a página, na forma de paisagem
+(\emph{landscape}). Podemos fazer isso da forma que se apresenta na figura~\ref{fig:logotipo2}.
+
+
+% Colocar uma figura
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.99,angle=90]{./figures/logoISEL.png}
+\end{center}
+\caption{Legenda da figura com o logotipo do ISEL - versão 2.}
+\label{fig:logotipo2}
+\end{figure}
+	

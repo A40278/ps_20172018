@@ -1,0 +1,432 @@
+
+\documentclass{beamer}
+% 
+%\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{rotating}
+%\usepackage{mathptmx}
+\usepackage{graphicx}
+
+% Packages a utilizar e respetivos parâmetros.
+\usepackage[latin1]{inputenc}
+\usepackage[portuguese]{babel}
+
+%\usepackage{helvet}
+%\usepackage{extsize}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\renewcommand{\algorithmicrequire}{\textbf{Dados:}}
+\renewcommand{\algorithmicensure}{\textbf{Resultado:}}
+
+\newcolumntype{x}[1]{%
+>{\centering}p{#1}}%
+
+
+\usefont{T1}{ptm}{m}{n}
+\selectfont
+
+\setlength{\TPHorizModule}{30mm} 
+\setlength{\TPVertModule}{\TPHorizModule} 
+\setlength{\parindent}{0pt} 
+%\TPGrid[40mm,40mm]{15}{25}  % 3 - 1 - 7 - 1 - 3 Columns
+%\TPGrid{210}{297} 
+
+\usetheme[compress]{Singapore}
+%\usetheme[compress]{Pittsburgh}
+%\usetheme[compress]{PaloAlto}
+
+
+\setbeamertemplate{footline}[frame number]
+\setbeamercovered{transparent}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{navigation symbols}{}
+
+
+%\setcounter{tocdepth}{4} 
+%
+% 0
+%
+%%% title page
+\title{\textsc{*T\'{i}tulo do Trabalho de Projecto*}}
+%\subtitle{}
+\author{
+	{\large \textbf{*Fernando Pessoa*\\ *Ricardo Reis*}} \\
+}
+
+\vspace{2cm} 
+
+\institute
+{
+	{\normalsize Licenciatura em Engenharia Inform\'{a}tica e de Computadores}
+	
+
+	\vspace{.1cm}
+  {\normalsize Projecto e Semin\'{a}rio} \\ 
+  \vspace{.5cm}
+  {\normalsize 
+	\begin{tabular}{ll}
+  {Orientadores:} & *\'{A}lvaro de Campos* \\
+                  & *Alberto Caeiro, SoftCompany*\\
+  \end{tabular}}\\
+
+
+}
+\vfill
+\date{Apresenta\c{c}\~ao  * *\\ Maio de 2015}
+
+
+%%%
+\begin{document}
+
+%
+% Slide 1 - Capa
+%% title
+\begin{frame}[t,plain]
+		%\begin{minipage}{14em}\mdseries
+		\includegraphics[width=10em,height=6em]{logo_principal} 
+		%\end{minipage}
+\titlepage
+\end{frame}
+
+%
+% Slide 2 - TOC
+%
+%% toc
+\begin{frame}
+\frametitle{Sum\'{a}rio}
+\scriptsize{\tableofcontents}
+\end{frame}
+
+%
+% Secção 1 - Introdução
+%
+\section[Introdu\c{c}\~ao]{Introdu\c{c}\~ao}
+
+%
+% Slide 3 - 
+%
+\begin{frame}{Introdu\c{c}\~ao}
+Cen\'arios t\'ipicos de manipula\c{c}\~ao de dados (figura)
+\begin{figure}
+	\centering
+	\includegraphics*[width=10cm,height=4.5cm]{cenario.png}
+\end{figure}
+
+\vfill
+Os dados (lista enumerada):
+\begin{itemize}
+	\item organizados em $n$ padr\~oes, exemplos ou inst\^ancias
+	\item cada padr\~ao tem $d$ caracter\'isticas (dimensionalidade)
+	\item podem ser manipulados com diferentes prop\'ositos/objetivos
+\end{itemize}
+\end{frame}
+
+%
+% Secção 2 - O Problema
+%
+\section[O Problema]{O Problema}
+
+%
+% Slide 4 - 
+%
+\begin{frame}{O Problema: conceitos}
+Exemplos de dados de baixa dimensionalidade e \textcolor{blue}{com AD} (tabela):
+\begin{itemize}
+	\item $d$ dimens\~oes, $c$ classes, $n$ padr\~{o}es 
+	\item em baixa dimensionalidade, $n > d$ ou $n \gg d$
+	\item com AD, tipicamente tem-se $d \gg n$
+\end{itemize}
+
+\vfill
+\begin{table}[h!]
+	\centering
+	\scriptsize
+	\scalebox{0.9}{
+	\begin{tabular}{|l|r|r|r|r|l|r|r|r|r|}
+		\hline
+		\textbf{Conjunto}       & $d$   &  $c$   & $n$ &    \textbf{Tipo de Dados} & \textbf{Problema} \\ \hline 
+    Car                     & 6     &   4    & 1728 & Autom\'oveis & Possibilidade de Compra   \\ \hline
+ 	  Pima                    & 8     &   2    &   768   & Cl\'inicos & Dete\c{c}\~ao da Diabetes \\ \hline 
+    Contraceptive           & 9     &   2    &  1473   & Cl\'inicos & M\'etodo de Contrace\c{c}\~ao \\ \hline
+    Wine                    & 13    &   3    &  178 & Qu\'imicos & Tipo de Vinho \\ \hline
+    Hepatitis               & 19    &   2    &  155 & Cl\'inicos & Dete\c{c}\~ao  de Hepatite \\ \hline 
+    Dermatology             & 34    &   6    & 358 & Cl\'inicos & Doen\c{c}a de Pele \\ \hline \hline
+    \textcolor{blue}{Colon}             & \textcolor{blue}{2000}    &   \textcolor{blue}{2}    &   \textcolor{blue}{62}   &    \textcolor{blue}{Exp. Gen\'etica} & \textcolor{blue}{Dete\c{c}\~ao de Cancro}\\ \hline 
+\textcolor{blue}{SRBCT}   & \textcolor{blue}{2309}    &   \textcolor{blue}{4}    &   \textcolor{blue}{83}   &    \textcolor{blue}{Exp. Gen\'etica} & \textcolor{blue}{Dete\c{c}\~ao de Cancro} \\ \hline
+	  \textcolor{blue}{TOX-171}	 				 & \textcolor{blue}{5748}	   &   \textcolor{blue}{4}	  &  \textcolor{blue}{171}	 &    \textcolor{blue}{Exp. Gen\'etica} & \textcolor{blue}{Dete\c{c}\~ao de Cancro} \\ \hline			 	
+		\textcolor{blue}{Example1}         & \textcolor{blue}{9947}    &   \textcolor{blue}{2}    &  \textcolor{blue}{2000}   &    \textcolor{blue}{Texto} & \textcolor{blue}{Assunto da Not\'icia}       \\ \hline
+		\textcolor{blue}{ORL10P}           & \textcolor{blue}{10304}   &  \textcolor{blue}{10}   &  \textcolor{blue}{100}    &    \textcolor{blue}{Faces} & \textcolor{blue}{Identifica\c{c}\~ao}  \\ \hline				
+		\textcolor{blue}{11-Tumors}        & \textcolor{blue}{12553}   &  \textcolor{blue}{11}    &  \textcolor{blue}{174}   &    \textcolor{blue}{Exp. Gen\'etica} & \textcolor{blue}{Dete\c{c}\~ao de Cancro}	\\ \hline
+  	\textcolor{blue}{Lung-Cancer}      & \textcolor{blue}{12601}   &   \textcolor{blue}{5}    &  \textcolor{blue}{203}   &    \textcolor{blue}{Exp. Gen\'etica} & \textcolor{blue}{Dete\c{c}\~ao de Cancro}	\\ \hline   		
+ 	%	\textcolor{blue}{SMK-CAN-187}	     & \textcolor{blue}{19993}	 &   \textcolor{blue}{2}	  &  \textcolor{blue}{187}	 &    \textcolor{blue}{Exp. Gen\'etica} & \textcolor{blue}{Dete\c{c}\~ao de Cancro}	\\ \hline  	 		
+		\textcolor{blue}{Dexter}           & \textcolor{blue}{20000}   &   \textcolor{blue}{2}    & \textcolor{blue}{2600}   &    \textcolor{blue}{Texto} & \textcolor{blue}{Assunto da Not\'icia}      \\ \hline
+		\textcolor{blue}{GLI-85}	         & \textcolor{blue}{22283}	 &   \textcolor{blue}{2}	  &   \textcolor{blue}{85}   &    \textcolor{blue}{Exp. Gen\'etica} & \textcolor{blue}{Dete\c{c}\~ao de Cancro} \\ \hline
+	  \textcolor{blue}{Dorothea}         & \textcolor{blue}{1000000} &   \textcolor{blue}{2}    & \textcolor{blue}{1950}   &    \textcolor{blue}{Cl\'inicos} & \textcolor{blue}{Dete\c{c}\~ao de Composto}\\ \hline	
+		\end{tabular}}
+\end{table}
+\end{frame}
+
+%
+% Secção 3 - A Solução
+%
+\section[A Solu\c{c}\~ao]{A Solu\c{c}\~ao}
+
+%
+% Slide 5
+%
+\begin{frame}{Propostas para Sele\c{c}\~ao: Complexidade}
+Em termos de complexidade, tem-se para o RFS
+\begin{equation} \nonumber
+	C_{RFS} = \underbrace{O(nd)}_{Relevancia} + \underbrace{O(d\log d)}_{Ordenacao}
+\end{equation}
+RRFS apresenta a complexidade adicional de calcular as semelhan\c{c}as entre pares
+\begin{equation} \nonumber
+	C_{RRFS} = \underbrace{O(nd)}_{Relevancia} + \underbrace{O(d\log d)}_{Ordenacao} + \underbrace{O(nm)}_{Redundancia}
+\end{equation}
+
+\vfill
+\begin{itemize}
+	\item RRFS \'e mais r\'apido do que outros filtros (FCBF e MRMR)
+	\item Nalguns casos, RRFS \'e o mais r\'apido com menos erro
+	\item CFS \'e o mais lento (inadequado para dados com AD)
+	\item Medidas MAD e MM adequadas para todos os tipos de dados
+	\item Medida AMGM \'e mais adequada para dados esparsos
+\end{itemize}
+\end{frame}
+
+
+%
+% Secção 4 - Grande Ideia 1
+%
+\section[Grande Ideia 1]{Grande Ideia 1}
+
+%
+% Slide 6 - 
+% 
+\begin{frame}{Representa\c{c}\~ao de Dados}
+Assim, identifica-se a necessidade de:
+\begin{itemize}
+	\item encontrar novas formas de representa\c{c}\~ao dos dados
+  \item representar de forma independente da tarefa a jusante
+  \item facilitar a visualiza\c{c}\~ao e an\'alise de dados com AD
+\end{itemize}
+
+\vfill
+As t\'ecnicas de \textbf{sele\c{c}\~ao} (\emph{feature selection} - FS) e 
+\textbf{discretiza\c{c}\~ao} (\emph{feature discretization} - FD) realizam essa representa\c{c}\~ao
+
+\vfill
+\textcolor{blue}{$\bullet$} \textbf{Sele\c{c}\~ao}\\
+$\rightarrow$ escolha de sub-conjuntos de caracter\'isticas adequados
+
+\vfill
+\textcolor{blue}{$\bullet$} \textbf{Discretiza\c{c}\~ao}\\ 
+$\rightarrow$ representa\c{c}\~oes discretas de caracter\'isticas num\'ericas\\
+$\rightarrow$ com informa\c{c}\~ao suficiente para aprendizagem\\
+$\rightarrow$ ignora ru\'ido e flutua\c{c}\~oes irrelevantes
+\end{frame}
+
+
+%
+% Secção 5 - Grande Ideia 2
+%
+\section[Grande Ideia 2]{Grande Ideia 2}
+
+
+
+%
+% Slide 7
+%
+\begin{frame}{Sele\c{c}\~ao: Taxonomia e Op\c{c}\~oes Tomadas}
+Algoritmos de sele\c{c}\~ao s\~ao categorizados como: 
+\begin{itemize}
+	\item [i)] filtros (\emph{filters})
+	\item [ii)] envolvimento (\emph{wrapper}) 
+	\item [iii)] embebidos (\emph{embedded})
+	\item [iv)] h\'ibridos (\emph{hybrid})	
+\end{itemize}
+
+\vfill
+Escolha inicial $\rightarrow$ filtros n\~ao supervisionados e supervisionados
+
+\vfill
+\begin{itemize}
+	\item Baixa complexidade, efici\^encia e interpretabilidade
+	\item Independentes da tarefa de minera\c{c}\~ao de dados 
+  \item Alguns filtros existentes s\~ao:
+   	\begin{itemize} 
+  	   \item ineficientes (tempo) em dados com AD\footnote{\footnotesize{CFS-Correlation-based Feature Selection, MRMR-Maximum Relevance Minimum Redundancy, RELIEF-Recursive Elimination of Features}} 
+  		 \item sens\'iveis ao problema de elevado $d$, baixo $n$\footnote{\footnotesize{FCBF - Fast Correlation-Based Filter}}
+  	\end{itemize}   
+\end{itemize}
+\end{frame}
+
+
+%
+% Slide 8
+%
+\begin{frame}{O algoritmo PS}
+\begin{table}
+\begin{algorithmic}[1]
+{\scriptsize
+\REQUIRE $X$: $n \times d$ matrix, $n$ patterns of a $d$-dimensional training set.\\
+	\indent \hspace{.6cm} $m \ (\leq d)$:, maximum number of features to keep.\\
+	\indent \hspace{.6cm} $M_S$: maximum allowed similarity between pairs of features.\\
+	\ENSURE $\mathrm{FeatKeep}$: an $m'-$dimensional array (with  $m' \leq m$) containing the indexes of the selected features.\\
+\indent \hspace{.5cm} $\widetilde{X}:$ $n \times m'$ matrix, reduced dimensional training set, with features sorted by decreasing relevance.\\
+	\vspace{1mm} \hrule \vspace{1mm}
+	\small
+	\STATE Compute the relevance $r_i$ of each feature $X_i$, for $i \in \{1,\ldots,d\}$,
+using a dispersion measure (MAD, MM, AMGM, or IQR).	
+	\STATE Sort the features by decreasing order of $r_i$. Let $i_1,i_2,...,i_d$ be the resulting
+permutation of $\{1,...,d\}$ ({\it i.e.}, $r_{i_1} \geq r_{i_2} \geq ... \geq r_{i_d}$).
+	\STATE $\mathrm{FeatKeep}[1] = i_1$; prev=1; next=2;  
+	\FOR {$f=2$ to $d$}
+	  \STATE $s = S(X_{i_f},X_{i_{\mathrm{prev}}})$; 
+		\IF {$s<M_S$}
+			\STATE $\mathrm{FeatKeep[next]} = i_f$; $\widetilde{X}_{\mathrm{next}} = X_{i_f}$; prev = $i_f$; next = next + 1; 
+		\ENDIF
+		\IF {next=m}
+			\STATE break; \hfill \COMMENT{/* We have m features. Break loop. */}
+	  \ENDIF
+	\ENDFOR	
+}
+\end{algorithmic}
+\end{table}
+\end{frame}
+
+
+%
+% Secção 6 - Resultados Obtidos
+%
+\section[Resultados Obtidos]{Resultados Obtidos}
+
+
+%
+% Slide 9
+%
+\begin{frame}{Avaliação Experimental: Relev\^{a}ncia}
+Algoritmo \emph{relevance FS} (RFS): 
+\begin{itemize}
+	\item guarda as caracter\'isticas com maior \emph{relev\^ancia}
+	\item relev\^ancia medida pela \emph{dispers\~ao}
+\end{itemize}
+
+Para o caso n\~ao supervisionado $\rightarrow$ medidas de \emph{relev\^ancia} $@rel$:\\
+\vfill
+\textcolor{blue}{$\bullet$} \emph{Mean absolute difference} $\mbox{MAD}_i = \frac{1}{n} \sum_{j=1}^{n} \left| X_{ij}  - \overline{X}_i \right|$
+
+\vfill
+\textcolor{blue}{$\bullet$} \emph{Mean-median} $\mbox{MM}_i = |\overline{X}_i - \mathrm{median}{(X_i)}|$ 
+%o valor absoluto da diferen\c{c}a entre a m\'edia e a mediana de $X_i$
+
+\vfill
+\textcolor{blue}{$\bullet$} \emph{Arithmetic mean geometric mean}
+\vspace{-.65cm}
+\begin{equation} \nonumber
+	\mbox{AMGM}_i = \frac{1}{n} \sum_{j=1}^{n} \exp(X_{ij}) / \left( \exp \left( \sum_{j=1}^{n} X_{ij} \right) \right)^\frac{1}{n}
+\end{equation}
+
+\vfill
+Crit\'erio de relev\^ancia cumulativa $\sum_{f=1}^m r_{i_f} / \sum_{i=1}^d r_i = c_m / c_d \geq L,$ $L \in [0,8; 0,95] \rightarrow$ escolha do n\'umero de caracter\'isticas $m \ (< d)$
+\end{frame}
+
+
+%
+% Slide 10
+%
+\begin{frame}{Propostas para Sele\c{c}\~ao: Resultados Experimentais}
+
+{
+\small
+\textcolor{blue}{$\bullet$} 
+Classifica\c{c}\~ao supervisionada (SVM linear), valida\c{c}\~ao cruzada (\emph{10-fold})\\
+\textcolor{blue}{$\bullet$} 
+Percentagem de erro de generaliza\c{c}\~ao com filtros \textcolor{blue}{supervisionados}\\
+}
+
+\begin{table}[h!]
+ % \vspace{-0.25cm}
+	\centering
+	\footnotesize
+	\scalebox{0.9}{
+	\begin{tabular}{l|r|r|r|r|r|r|r|r|r|}
+		\cline{2-10}
+		                          & \multicolumn{3}{|c|}{\textbf{RRFS, $M_S=0.8$}} & \multicolumn{5}{|c|}{\textbf{Filtros Supervisionados\footnote{\footnotesize{Mutual Information (MI), RELIEF (RF), Correlation-based Feature Selection (CFS), Fast Correlation-based Filter (FCBF), Fishers Ratio (FiR) e
+		                          Maximum Relevance Minimum Redundancy (MRMR)}}}} & \multicolumn{1}{|c|}{\textbf{Base}}\\ \hline
+		\multicolumn{1}{|l|}{\textbf{Conjunto}} & \multicolumn{1}{|c|}{\textbf{MM}}  & \multicolumn{1}{|c|}{\textbf{FiR}} & \multicolumn{1}{|c|}{\textbf{MI}} & \multicolumn{1}{|c|}{\textbf{RF}} & \multicolumn{1}{|c|}{\textcolor{blue}{\textbf{CFS}}} & \multicolumn{1}{|c|}{\textbf{FCBF}} & \multicolumn{1}{|c|}{\textbf{FiR}}	&  \multicolumn{1}{|c|}{\textbf{MRMR}}	& \multicolumn{1}{|c|}{\textbf{Sem FS}} \\  \hline
+		
+    \multicolumn{1}{|l|}{Colon}       & 24.2  & 22.6  & 24.2 &  \textbf{19.4} & \textcolor{blue}{25.8} & 22.6 & \textbf{19.4} & 21.0 & 21.0   \\ \hline
+	%  \multicolumn{1}{|l|}{SRBCT}               & \textbf{0.0}  & \textbf{0.0}   &  \textbf{0.0} &  \textbf{0.0}  & \textbf{0.0} & 4.8 & \textbf{0.0} & 4.8 & \textbf{0.0}  \\ \hline
+	%  \multicolumn{1}{|l|}{PIE10P}      & \textbf{0.0} &  \textbf{0.0} & 0.5 & \textbf{0.0} & N/A & 1.0  & \textbf{0.0}  & 24.8 & \textbf{0.0} \\ \hline
+		\multicolumn{1}{|l|}{\textcolor{blue}{Lymphoma}}  					& \textcolor{blue}{\textbf{2.2}}   & \textcolor{blue}{\textbf{2.2}}     & \textcolor{blue}{\textbf{2.2}}  &  \textcolor{blue}{\textbf{2.2}}  & \textcolor{blue}{N/A}   & \textcolor{blue}{3.3} & \textcolor{blue}{\textbf{2.2}}  & \textcolor{blue}{22.8} & \textcolor{blue}{\textbf{2.2}} \\ \hline
+		\multicolumn{1}{|l|}{Leukemia1}  			  & 5.6   & \textbf{2.8}  & 6.9  &  6.9 & \textcolor{blue}{N/A}  & 5.6 & 4.2 & 9.7 & 5.6  \\ \hline		
+		\multicolumn{1}{|l|}{B-Tumor1}  		  & 13.3  & 12.2  & 13.3 &  11.1 & \textcolor{blue}{N/A} & \textcolor{blue}{18.9} & 11.1 & \textcolor{blue}{25.6} & \textbf{10.0} \\ \hline
+    \multicolumn{1}{|l|}{Leukemia}  					& \textbf{2.8}  & 12.5 & \textbf{2.8} & \textbf{2.8} & \textcolor{blue}{N/A} & 4.2 & 4.2 & 8.3 & \textbf{2.8} \\ \hline
+		\multicolumn{1}{|l|}{Example1}  					& 2.3   & 2.2 & 2.2  & 3.7 & \textcolor{blue}{N/A} & 6.3 & \textbf{2.1} & 28.3 & 2.4 \\ \hline
+  %	\multicolumn{1}{|l|}{ORL0P}      					& 4.0 &  5.0 & 2.0 & \textbf{1.0} & N/A & \textbf{1.0}  & 2.0  & 68.0  & \textbf{1.0}\\ \hline
+		\multicolumn{1}{|l|}{B-Tumor2}  		  & 34.0  & \textbf{22.0}  & 30.0 & \textbf{22.0} & \textcolor{blue}{N/A} & \textcolor{blue}{36.0} & 24.0 & \textcolor{blue}{42.0} & 26.0 \\ \hline
+	  \multicolumn{1}{|l|}{\textcolor{blue}{P-Tumor}}  		& \textcolor{blue}{7.8}   & \textcolor{blue}{5.9}   & \textcolor{blue}{\textbf{4.9}} & \textcolor{blue}{7.8}  & \textcolor{blue}{N/A} & \textcolor{blue}{9.8} & \textcolor{blue}{7.8} & \textcolor{blue}{12.7} & \textcolor{blue}{8.8}  \\ \hline
+	  \multicolumn{1}{|l|}{L-Cancer}  				& 5.9   &  6.4  & 4.9  & 4.9   & \textcolor{blue}{N/A}    & 6.4 & 5.4 & 11.8 & 5.9 \\ \hline
+	%	\multicolumn{1}{|l|}{SMK-187}  				& 41.7 & 40.6 & 53.5 & 24.6 & N/A & 33.2 & \textbf{23.5} & 33.2 & 24.1 \\ \hline
+	  \multicolumn{1}{|l|}{Dexter}  					  & 6.7  & \textbf{6.0} & 7.7 & 9.3 & \textcolor{blue}{N/A} & 15.3 & 6.7 & 18.0 & 6.3 \\ \hline
+	%	\multicolumn{1}{|l|}{GLI-85}  					  & 14.1 &  12.9 & 17.6 & \textbf{11.8} & N/A & 20.0 & 14.1 & 16.5 & 14.1 \\ \hline
+ 	  \multicolumn{1}{|l|}{\textcolor{blue}{Dorothea}}  					& \textcolor{blue}{\textbf{25.0}} &  \textcolor{blue}{26.0}  & \textcolor{blue}{\textbf{25.0}}  &   \textcolor{blue}{N/A} & \textcolor{blue}{N/A} & \textcolor{blue}{N/A} & \textcolor{blue}{\textbf{25.0}}   & \textcolor{blue}{N/A}  & \textcolor{blue}{\textbf{25.0}}   \\ \hline
+	\end{tabular}}
+\end{table}
+\end{frame}
+
+
+% Secção 7 - Conclus\~oes 
+%
+\section[Conclus\~oes]{Conclus\~oes}
+
+%
+% Slide 11
+%
+\begin{frame}{Conclus\~oes}
+\begin{itemize}
+	\vfill
+	\item O projeto consistiu em....
+	
+	\vfill
+	\item Atingiu-se uma solu\c{c}\~ao ...
+	
+	\vfill
+	\item Os m\'etodos propostos foram avaliados:
+	\begin{itemize}
+		\item sobre dados de dom\'inio p\'ublico 
+		\item comparativamente com m\'etodos existentes em implementa\c{c}\~oes de dom\'inio p\'ublico 
+	\end{itemize}
+	
+	\vfill
+	\item Os m\'etodos propostos complementam os existentes, podendo ser combinados entre si
+	
+\end{itemize}
+\end{frame}
+
+%
+% Slide 12
+%
+\subsection[Trabalho Futuro]{Trabalho Futuro}
+\begin{frame}{Trabalho Futuro}
+Perspetivam-se as dire\c{c}\~oes de trabalho futuro:
+\begin{itemize}
+	\vfill
+	\item Melhorar a proposta de ...
+	
+	\vfill
+	\item Explorar o afinamento dos par\^ametros ...
+	
+	\vfill
+	\item ..
+	
+	\vfill \hfill \footnotesize{Slides elaborados em \LaTeX \ com o package \textsc{beamer}}.
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+
