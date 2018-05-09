@@ -1,0 +1,579 @@
+* {
+    font-family: Meiryo, sans-serif;
+    
+}
+
+/***************************************/
+/***** PRIMARY COLOR CUSTOMIZATION *****/
+/***************************************/
+
+
+a,
+a:link,
+a:visited {
+    color: #0d0980; /*primary-color*/
+}
+
+a.Button{
+    color: #999;
+    background-color: #999;
+}
+
+.Button{
+    color: #fff;
+    background-color: #0d0980;
+    
+}
+.Header_Menu,
+.Application_Menu {
+    background-color: #0d0980; /*primary-color*/
+    box-shadow: 0 -2px 0 0 rgba(0, 0, 0, .25) inset;
+    white-space: nowrap;
+}
+
+.Menu_TopMenuActive,
+.Menu_DropDownButton.open .Menu_TopMenu {
+    background-color: #999;
+    -webkit-filter: brightness(80%);
+    filter: brightness(0.8);
+    -servicestudio--webkit-filter: brightness(-0.2);
+}
+
+.Menu_TopMenu a:hover,
+.Menu_TopMenu:hover {
+    background-color: #0d0980; /*primary-color*/
+    -webkit-filter: brightness(80%);
+    filter: brightness(0.8);
+    -servicestudio--webkit-filter: brightness(-0.2);
+}
+
+
+/* Menu_SubMenuItem */
+.Menu_DropDownPanel a.Menu_SubMenuItem,
+.Menu_DropDownPanel a.Menu_SubMenuItem:link,
+.Menu_DropDownPanel a.Menu_SubMenuItem:visited {
+    background-color: #0d0980; /*primary-color*/
+}
+
+.Menu_DropDownPanel a.Menu_SubMenuItem:hover,
+.Menu_DropDownPanel a.Menu_SubMenuItem.Menu_SubMenuItemActive {
+    background-color: #0d0980; /*primary-color*/
+    -webkit-filter: brightness(80%);
+    filter: brightness(0.8);
+    -servicestudio--webkit-filter: brightness(-0.2);
+}
+
+a.Header_ButtonMenu {
+    color: #fff;
+}
+
+.tablet .Application_Menu a,
+.phone .Application_Menu a,
+.tablet .Application_Menu a:link,
+.phone .Application_Menu a:link,
+.phone .Application_Menu a:visited,
+.phone .Application_Menu a:visited {
+    border-bottom-color: rgba(0,0,0,0.2);
+}
+
+span.ListNavigation_CurrentPageNumber{
+    color:#FFF;
+}
+
+.EditableTable tr.RowControlGroup a.SaveRowAction,
+.EditableTable tr.RowControlGroup a.CancelRowAction{
+    color: #0d0980; /*primary-color*/
+}
+
+.Button.ButtonDefault,
+.Button.Is_Default {
+    background-color: #0d0980; /*primary-color*/
+    border-color: #0d0980; /*primary-color*/
+    color: #fff;
+    text-shadow: none;
+}
+
+.desktop .Button.ButtonDefault:hover,
+.desktop .Button.Is_Default:hover,
+.Button.Button.Is_Default:hover {
+    background-color: #0d0980; /*primary-color*/
+    border-color: #0d0980; /*primary-color*/
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+    -servicestudio--webkit-filter: brightness(-0.1);
+}
+
+.Button.Cancel {
+    background-color: #fff;
+}
+
+.desktop .Button.Cancel:hover {
+    background-color: #fff;
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+    -servicestudio--webkit-filter: brightness(-0.1);   
+}
+
+.desktop .Button:hover,
+.desktop a.Button:hover {
+    background-color: #cfcfcf;
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+    -servicestudio--webkit-filter: brightness(-0.1);
+}
+
+.Button.Link {
+    color: #0d0980; /*primary-color*/
+}
+
+.desktop .Button.Link:hover {
+    background-color: #fff;
+    border-color: #0d0980; /*primary-color*/
+    color: #0d0980; /*primary-color*/
+}
+
+.Button.Danger{
+    background-color: #e09d90;
+    border-color: #df3a01;
+    color: #fff;
+}
+
+a.ActionAdd,
+a.ActionEdit,
+a.ActionChange,
+a.ActionDelete {
+    background-color: #0d0980;
+    border-color: #0d0980;
+    color: #fff;
+    
+}
+
+a.ActionAdd:hover,
+a.ActionEdit:hover,
+a.ActionChange:hover,
+a.ActionDelete:hover {
+    background-color: #0d0980;
+    border-color: #0d0980;
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+    -servicestudio--webkit-filter: brightness(-0.1);
+    
+    color: #fff;
+}
+
+
+a.ActionAdd:before, 
+a.ActionEdit:before, 
+a.ActionDelete:before, 
+a.ActionChange:before, 
+.Actions [class^=fa]{
+    background: #0d0980; /*primary-color*/
+}
+
+.DropdownMenu .PH > a {
+    color: #0d0980; /*primary-color*/
+}
+
+.DropdownMenu .PH > a:hover {
+    background-color: #efefef;
+    color: #0d0980; /*primary-color*/
+    text-decoration: none;
+}
+
+.phone .Login_Info_Logout:before,
+.tablet .Login_Info_Logout:before {
+    color: #0d0980; /*primary-color*/
+}
+
+.IconBadge_number {
+    background-color: #0d0980; /*primary-color*/
+}
+
+.NavigationBar a.Active:after {
+    background-color: #0d0980; /*primary-color*/
+}
+
+.NavigationBar a.Active:not(.ie7):before,
+.NavigationBar a.Active:not(.ie8):before {
+    border-bottom-color: #0d0980; /*primary-color*/
+}
+
+.phone .NavigationBar .InlineDropdown:active:after,
+.phone .NavigationBar .InlineDropdown:link:active:after,
+.tablet .NavigationBar .InlineDropdown:active:after,
+.tablet .NavigationBar .InlineDropdown:link:active:after,
+.phone .NavigationBar a:active:after,
+.phone .NavigationBar a:link:active:after,
+.tablet .NavigationBar a:active:after,
+.tablet .NavigationBar a:link:active:after {
+    background-color: #0d0980; /*primary-color*/
+}
+
+
+/* Responsive Context **************************/
+
+.desktop .NavigationBar a:hover:after,
+.desktop .NavigationBar a:link:hover:after {
+    background-color: #0d0980; /*primary-color*/
+}
+
+
+.phone .NavigationBar a:active:after,
+.phone .NavigationBar a:link:active:after,
+.tablet .NavigationBar a:active:after,
+.tablet .NavigationBar a:link:active:after {
+    background-color: #0d0980; /*primary-color*/
+}
+
+
+/* NavigationBar: Vertical **************************/
+
+.NavigationBar.Vertical a.Active,
+.NavigationBar.Vertical a:link.Active {
+    border-color: #0d0980; /*primary-color*/
+}
+
+.NavigationBar.Vertical a.Active:not(.ie7):before,
+.NavigationBar.Vertical a.Active:not(.ie8):before {
+    border-left-color: #0d0980; /*primary-color*/
+}
+
+/* Responsive Context **************************/
+.desktop .NavigationBar.Vertical a:hover,
+.desktop .NavigationBar.Vertical a:link:hover {
+    border-color: #0d0980; /*primary-color*/
+}
+
+
+.SectionIndex a.active, 
+.SectionIndex a:hover{
+    border-bottom-color: #0d0980; /*primary-color*/
+    color: #0d0980; /*primary-color*/
+}
+
+.SectionIndex.vertical a.active, 
+.SectionIndex.vertical  a:hover{
+    border-left-color: #0d0980; /*primary-color*/
+}
+
+.Tabs__tab.active {
+    border-top: 1px solid #ccc;
+}
+
+/* Calendar **************************/
+.pika-prev:after,
+.pika-next:after {
+    color: #0d0980; /*primary-color*/ 
+}
+
+.pika-title {
+    border-bottom: 2px solid #0d0980; /*primary-color*/
+}
+
+.is-selected .pika-button {
+   background-color: #0d0980; /*primary-color*/
+}
+
+.has-event .pika-button:after {
+   background-color: #0d0980; /*primary-color*/ 
+}
+
+/* Calendar DEPRECATED **************************/
+.Calendar-dayNames {
+    border-top-color: #0d0980; /*primary-color*/
+}
+
+.Calendar-navBtn > div {
+    color: #0d0980; /*primary-color*/
+}
+
+.Calendar-day-selected,
+.Calendar-day-selected:hover {
+    background: #0d0980; /*primary-color*/
+}
+
+.Calendar-time-down, 
+.Calendar-time-up, 
+.Calendar-time-am {
+    color: #0d0980; /*primary-color*/
+}
+
+
+/* OS PopUps **************************/
+
+div.os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-titlebar,
+div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-titlebar {
+    background: #0d0980; /*primary-color*/
+}
+
+/* Wizard **************************/
+
+.WizardStep:before {
+    border-bottom-color: #c2c2c2;
+    border-top-color: #c2c2c2;
+}
+
+.WizardStep.ActiveStep {
+    background: #0d0980; /*primary-color*/
+}
+
+.WizardStep.ActiveStep:before {
+    border-bottom-color: #0d0980; /*primary-color*/
+    border-top-color: #0d0980; /*primary-color*/
+}
+
+.WizardStep.Past {
+    background-color: #0d0980; /*primary-color*/
+}
+
+.WizardStep.Past:before {
+    border-color: #0d0980; /*primary-color*/
+}
+
+.WizardStep.Past:after,
+.WizardStep.ActiveStep:after {
+    border-right-color: #efefef;
+    border-top-color: #efefef;
+}
+
+.Title{
+    color: #0d0980;
+    
+    font-family: Arial;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.Body{
+    background-color: white
+}
+
+.InfoDisplay{
+    border-radius: 10px;
+    background-color: #818489;
+    color: #fff;
+    
+}
+
+.InfoHeader{
+    background-color: #ccc;
+    
+    color: #0d0980;
+    text-align: center;
+    font-weight: normal;
+}
+
+.InfoHeader a:link {
+    color: #999;
+}
+
+.InfoText{
+    
+    color: #999;
+}
+
+.TitleMain{
+    color: #0d0980;
+    font-family: Arial;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    
+}
+th{
+    background-color: #0d0980;
+    color: #999;
+}
+tr:nth-child(even) {
+    background: #CCC;
+    
+    text-align: center;
+    font-weight: normal;
+}
+tr:nth-child(odd) {
+    background: #FFF;
+    
+    text-align: center;
+    font-weight: normal;
+}
+
+.ButtonIn{
+    background-color: #0d0980;
+    border: 3px solid #;
+    box-shadow: none;
+    color: #ccc;
+    font-weight: bold;
+    border-radius: 0px;
+    border-width: 3px;
+}
+
+.ButtonIn:hover {
+    box-shadow: none;
+}
+
+.ButtonIn:visited,
+.ButtonIn:link {
+    color: #787f86;
+    
+}
+
+.ButtonIn:active {
+    box-shadow: inset 0 10px 20px rgba(0,0,0,.25);
+}
+
+.TableRecordPe{
+    background-color: #fff;
+    color: #0d0980;
+}
+
+.TableRecordPeHeader{
+    background-color: #0d0980;
+    color: #fff;
+    ;
+    font-weight: bold;
+    text-align: center;
+}
+
+.TableRecordPeOdd{
+    background-color: #fff;
+    color: #0d0980;
+    
+    text-align: center;
+}
+
+.TableRecordPeEven{
+    background-color: #efefef;
+    color: #0d0980;
+    
+    text-align: center;
+}
+
+.InfoDisplay2{
+    border-radius: 0px 0x 10px 10px;
+    background-color: #999;
+    color: #0d0980;
+    
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+
+
+.InfoDisplay3{
+    border-radius: 0px 0x 10px 10px;
+    background-color: #999;
+    color: #0d0980;
+    
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.Form2{
+    text-align: left;
+}
+
+.FormEditPencil { display: none;} 
+
+.TabelEdi{
+    color: #000;
+    background-color: #fff;
+}
+
+-RowEditTable{
+    
+    background-color: #fff;
+}
+
+.TableRecords_OddLine, .TableRecords_EvenLine{
+    text-align: left;
+}
+
+.EditableTable th{
+    
+}
+
+.Header{
+    background-color: #787f86;
+}
+
+.TableRecords_Header{
+    color: #fff;
+}
+
+.EditableTable{
+    color: #fff;
+}
+
+table.ShowRecord tr td {
+    text-align: left;
+}
+
+.CallDown{
+    background-color: #0d0980;
+    color: #999;
+    
+    text-decoration: none;
+}
+
+.CallDown:hover{
+    text-decoration: underline;
+}
+
+.BlueCont{
+    background-color: #0d0980;
+    margin: 5px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+    color: #fff;
+    
+    text-align: center;
+}
+
+.decision:hover{
+    color: #fff;
+}
+
+.optionHeader .linkOpt{
+    
+    color: #fff;
+    padding: 2px;
+    text-align: center;
+}
+
+.optionHeader .linkOpt:hover{
+    text-decoration: underline;
+}
+
+
+.SectionIndex a, .SectionIndex a:link{
+    color: #000;
+    
+}
+
+.SectionIndex a:hover{
+    text-decoration: underline;
+}
+
+
+.NavBar .SectionIndex .active{
+    color: #fff;
+    
+    text-decoration: underline;
+}
+
+
+.HeaderCont{
+    background-color: #0d0980;
+    color: #000;
+    text-align: center;
+    
+}
+.Cont{
+    background-color: #000;
+    text-align: center;
+    
+    color: #fff;
+}
