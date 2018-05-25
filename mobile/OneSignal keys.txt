@@ -1,0 +1,5 @@
+appid
+d78678fb-c251-4bef-b367-34fa61f5454a
+
+RestAPIKey
+"ODY4YmNhZjAtYzAxMi00ZDQxLWEzMGYtMjczNTc3NDNiY2Mx"
