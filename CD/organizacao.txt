@@ -1,0 +1,7 @@
+1. Projeto - Pasta com os módulos (.oml) do projeto.
+	1.1. IView.oml - Módulo da componente web do projeto.
+	1.2. IViewCore.oml - Módulo da base de dados do projeto.
+	1.3. IViewMobile.oml - Módulo da componente mobile do projeto.
+2. Cartaz IView.pdf - Cartaz do projeto.
+3. Relatorio_Final_G01_IVIew_PS1718.pdf - Relatorio final do projeto.
+4. Resumo_G01_IVIew_PS1718.pdf - Resumo do projeto
